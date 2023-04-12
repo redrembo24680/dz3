@@ -1,0 +1,47 @@
+{% extends '__layout.html' %}
+
+{% block title %}
+login
+{% endblock %}
+
+{% block content %}
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+
+    <div class="main-text">
+        <p>Login</p>
+    </div>
+
+    <div class="username">
+        {{ form.username(placeholder="Your username") }}
+    </div>
+
+    <div class="username-errors">
+        {% for error in form.username.errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="password">
+        {{ form.password(placeholder="Your password") }}
+    </div>
+
+    <div class="password-errors">
+        {% for error in form.password.errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+
+    <div>
+      <p>{{ form.remember_me.label() }} {{ form.remember_me() }}</p>
+    </div>
+
+    <div class="submit">
+        {{ form.submit(value="Submit") }}
+    </div>
+
+</form>
+
+<a href="{{ url_for('register') }}">Register</a>
+
+{% endblock %}

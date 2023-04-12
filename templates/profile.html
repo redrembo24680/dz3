@@ -1,0 +1,16 @@
+{% extends '__layout.html' %}
+
+{% block title %}
+профіль
+{% endblock %}
+
+{% block content %}
+<li><a class="py-2 d-none d-md-inline-block default_pointer_cs" href="/logout">logout</a></li>
+<ul>
+    <li><p>id: {{list.id}}, email: {{list.email}}</p>
+        <ul>
+            <li><p>імя: {{list.username}}</p></li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}
